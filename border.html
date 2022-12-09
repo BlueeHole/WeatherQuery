@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta charset="UTF-8">
+  
+  
+<style>
+.box {
+    width: 688px;
+    border: 2px dashed #ececea;
+}
+.content {
+    height: 420px;
+}
+</style>
+<script>
+	TESTER = document.getElementById('math-function');
+
+    var x = [], y = [];
+
+    for(var i = -10; i < 10; i += 1) {
+        x.push(i);
+        y.push(2*i+1);
+    }
+
+    Plotly.plot(TESTER, [{
+        x: x,
+        y: y
+    }], {
+        margin: {t: 0}
+    });
+	</script>
+
+</head>
+<body>
+
+<div class="box" id="math-function">
+    <div class="content"></div>
+</div>
+
+</body>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<meta name="apple-mobile-web-app-title" content="CodePen">
+  
+<style>
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.container{
+	text-align: center;
+	opacity: 0.7;
+	color: #FFFFFF;
+	font-family: "华文中宋";
+	font-size: 17px;
+}
+
+</style>
+<script>
+  var trun = function(sec){
+			return (sec < 10) ? "0" + sec : sec;
+		}
+		var run = function(){
+			var weeks = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+			var d = new Date();
+			var year = d.getFullYear();
+			var month = d.getMonth() + 1;
+			var date = d.getDate();
+			var hours = d.getHours();
+			var minutes = d.getMinutes();
+			var seconds = d.getSeconds();
+			var day = d.getDay();
+			var str = year + "-" + trun(month) + "-" + trun(date) + " " + trun(hours) + ":" + trun(minutes) + ":" + trun(seconds) + " " + weeks[day];
+			document.getElementById("time").innerHTML = str;
+			//window.setTimeout("run();" , 1000));设置一秒后失效，可以做定时器
+		}
+		//window.setTimeout("run();" , 1000));
+		window.setInterval("run();" , 200);//设置1秒刷新一次
+
+</script>
+</head>
+
+<body>
+	<div id="time" class="container"></div>
+</body>
+
+</html>
+
